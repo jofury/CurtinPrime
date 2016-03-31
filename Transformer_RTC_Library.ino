@@ -1,6 +1,11 @@
+//////////////////////////////
+///  IEEE Curtin Prime Project
+///    by Technical Division
+///     Author: jojo
+
 #include "Tlc5940.h"
 #include "tlc_fades.h"
-#include <DS3231.h>
+#include "DS3231.h"
 #include "Transformer.h"
 #include <avr/wdt.h>
 
@@ -31,8 +36,6 @@ Set the start time here
 DS3231 rtc(SDA, SCL);
 Transformer curtinPrime( en,  ms1,  ms2,  ms3,  stp,  dir,
                           EN,  MS1,  MS2,  MS3,  STP,  DIR);
-                        
-
 void setup()
 {
   Serial.begin(57600);
@@ -43,7 +46,7 @@ void setup()
   //rtc.setTime(12, 0, 0);     // Set the time to 12:00:00 (24hr format)
   //rtc.setDate(3, 14, 2016);   // Set the date to January 1st, 2014
 
-/// Initiate the Transformer
+  /// Initiate the Transformer
   curtinPrime.headMotorOn(false);
   curtinPrime.neckMotorOn(false);
   curtinPrime.shield(false);
@@ -52,7 +55,7 @@ void setup()
   Tlc.update();
   delay(100);
   wdt_enable(WDTO_4S);
-//////////////////
+  //////////////////
 }
 
 void loop()
@@ -268,6 +271,5 @@ void pupilgreen()
   }
   Tlc.update();
 }
-
 
 
