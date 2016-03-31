@@ -26,6 +26,7 @@ Head Functions
 /***************
 Eye Functions
 *************/
+
 P/s: To set a LED, first use the Clear function, then Set function, then Update. After update be sure to use delay function.
 
 - Tlc.clear()
@@ -35,7 +36,11 @@ P/s: To set a LED, first use the Clear function, then Set function, then Update.
 **The LED Position Map
 
        (0)(1)
+       
   (2) (3)  (4) (5)
+  
 (6)(7)         (8)(9)
+
    (10)(11)(12)(13)
+   
        (14)(15)
